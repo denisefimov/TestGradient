@@ -16,9 +16,9 @@ class RadialGradientView: UIView {
     
     override func draw(_ rect: CGRect) {
         
-        let colors = [insideColor.cgColor, outsideColor.cgColor] as CFArray
+        let colors: [CGColor] = [insideColor.cgColor, outsideColor.cgColor]
         let endRadius = min(frame.width, frame.height) / 2.0
-        
+        let center = CGPoint(x: bounds.size.width / 2, y: bounds.size.height / 2)
         let gradient = CGGradient(colorsSpace: nil, colors: colors as CFArray, locations: nil)!
         let context = UIGraphicsGetCurrentContext()!
         
